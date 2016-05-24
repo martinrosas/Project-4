@@ -7,7 +7,7 @@ var userSchema = new mongoose.Schema({
   price: Number,
   categories: String,
   location: String,
-  serviceIds: [{type: mongoose.Schema.Types.ObjectId, ref: 'Service'}],
+  services: [{type: mongoose.Schema.Types.ObjectId, ref: 'Service'}],
   email: { type: String, required: true, unique: true },
   name:  { type: String, required: true }
 });

@@ -3,13 +3,15 @@
         <h1>Post A Job</h1>
       </div>
       <ul id="services">
-        <li ng-repeat="service in services.all">
+      <input type="text" ng-model="search" placeholder="search...">
+        <li ng-repeat="service in services.all | filter: search">
           <span ng-click ="services.updateStatus(service)" class="status {{service.categories}}">{{service.categories}}</span>
           {{service.title}}
           <em>{{service.location}}</em>
           <button ng-click="services.removeService(service)" class="delete">X</button>
         </li>
       </ul>
+
 
       <form id="newService" ng-submit="services.addService()">
         <div>

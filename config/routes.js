@@ -24,6 +24,10 @@ router.route('/services')
   //POST a new blob
   .post(servicesController.createService);
 
+  router.get('/profile/:id', usersCtrl.show);
+  // router.put('/profile/:id', usersCtrl.update);
+
+
 
 router.route('/services/:id')
 
