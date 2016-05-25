@@ -43,6 +43,9 @@ function createService(request, response) {
 
   var service = new Service(request.body);
   console.log(service)
+  console.log(request.decoded)
+  //
+  service.userId = request.decoded._id
   service.save(function(error) {
     if(error) response.json({messsage: 'Could not ceate service b/c:' + error});
 

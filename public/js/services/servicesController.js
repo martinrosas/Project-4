@@ -22,9 +22,11 @@
           vm.all = response.data.services;
           vm.emails = response.data.emails;
           console.log(vm.emails);
+
           // function getEmail (services) {
           //   services.forEach(function (service) {
           //     service.email = emails[service.userId]
+          //     vm.emails.push(service.email)
           //   })
           // }
 

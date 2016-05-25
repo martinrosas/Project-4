@@ -25,7 +25,7 @@ router.route('/services')
   // .get(employeesController.getAll)
 
   //POST a new blob
-  .post(servicesController.createService)
+  .post(token.authenticate, servicesController.createService)
   // .post(employeesController.createEmployee);
 
   router.get('/member/:id', usersCtrl.show);

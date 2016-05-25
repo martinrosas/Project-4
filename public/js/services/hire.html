@@ -1,0 +1,21 @@
+  <form id="newService" ng-submit="services.addService()">
+        <div>
+          <label for="title">Title:</label>
+          <input type="text" name="title" ng-model="services.newService.title">
+        </div>
+        <div>
+          <label for="location">Location:</label>
+          <input type="text" ng-model="services.newService.location" name="location">
+        </div>
+        <div>
+          <label for="categories">Categories:</label>
+          <select name="categories" ng-model="services.newService.categories">
+            <option value="web dev">Web Dev</option>
+            <option value="photography">Photography</option>
+            <option value="cleaning">Cleaning</option>
+          </select>
+        </div>
+        <div>
+          <input type="submit" value="Add Service">
+        </div>
+      </form>

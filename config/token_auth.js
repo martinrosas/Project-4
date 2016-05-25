@@ -16,6 +16,7 @@ var jwt = require('jsonwebtoken');
    return {
     email: user.email,
     name:  user.name,
+    _id: user._id,
     use:   'public_api'
    };
  }

@@ -28,7 +28,19 @@
         templateUrl:  "/js/services/service.html",
         controller:   "ServicesController",
         controllerAs: "services"
+      })
+      .state("usertype", {
+        url:          "/user-type",
+        templateUrl:  "/js/services/user.type.html"
+      })
+       .state("hire", {
+        url:          "/hire",
+        templateUrl:  "/js/services/hire.html",
+        controller:   "ServicesController",
+        controllerAs: "services"
+
       });
+
 
     $urlRouterProvider.otherwise("/");
   }
