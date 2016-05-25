@@ -2,7 +2,7 @@ var mongoose = require('mongoose'),
     debug    = require('debug')('app:models');
 
 //Job schema
-var JobseekSchema = new mongoose.Schema({
+var EmployeeSchema = new mongoose.Schema({
   title: String,
   description: String,
   skills: String,
@@ -10,10 +10,10 @@ var JobseekSchema = new mongoose.Schema({
   categories: String,
   location: String,
   created: { type: Date, default: Date.now },
-  userId: {type: Schema.Types.ObjectId, ref: 'User'}
+  userId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 });
 
 
-var Jobseek = mongoose.model('Jobseek', JobseekSchema);
+var Employee = mongoose.model('Employee', EmployeeSchema);
 
-module.exports = Jobseek;
+module.exports = Employee;

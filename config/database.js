@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
 // Use different database URIs based on whether an env var exists.
+require('dotenv').load();
 var dbUri = process.env.MONGOLAB_URI ||
             'mongodb://localhost/' + process.env.LOCAL_DB;
 
@@ -12,6 +13,7 @@ if (!process.env.MONGOLAB_URI) {
   });
 }
 
+console.log("Connecting to " + dbUri)
 mongoose.connect(dbUri);
 
 module.exports = mongoose;

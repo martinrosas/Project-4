@@ -11,15 +11,34 @@
       var vm = this;
       //easier for angular to loop through an empty array
       vm.all = [];
+      vm.emails = {};
 
     // http does same thing as $ajax
     // this string is the endpoint we want
+
     $http.get("http://localhost:3000/services")
         .then(function(response) {
           //response.data is an object
           vm.all = response.data.services;
+          vm.emails = response.data.emails;
+          console.log(vm.emails);
+          // function getEmail (services) {
+          //   services.forEach(function (service) {
+          //     service.email = emails[service.userId]
+          //   })
+          // }
+
           // console.log(response)
+             // DO THIS ON THE FRONTEND INSTEAD
+      // // match the email to the userId in the service
+      // services.forEach(function (service) {
+      //   service.email = emails[service.userId]
+      // })
           console.log(response.data.services)
+          console.log(response.data.emails)
+          //loop the service and get the userid and then match the user id to the email
+          // set the service email property to that email
+
           //this is a catch function that says
           //if there is an error log an error
         }, function(err) {

@@ -1,12 +1,38 @@
 var Service = require('../models/service');
+var User = require('../models/user')
+
 // var ObjectID = require('mongoose').Types.ObjectId;
 
 // GET
 function getAll(request, response) {
-  Service.find(function(error, services) {
+//   var populateQuery = [{path:'books', select:'title pages'}, {path:'movie', select:'director'}];
+
+// Person.find({})
+//  .populate(populateQuery)
+//  .execPopulate()
+  var populateQuery = [{path:'userId', select:'email'}];
+  Service.find({}, function(error, services) {
     if(error) response.json({message: 'Could not find any service'});
 
-    response.json({services: services});
+    // get all the users
+    User.find({}, function (error, users) {
+      if (error) response.json(error)
+
+      // create an obj with keys as user ids and values as emails
+      var emails = {}
+      users.forEach(function (user) {
+        emails[user._id] = user.email
+      })
+
+      // DO THIS ON THE FRONTEND INSTEAD
+      // // match the email to the userId in the service
+      // services.forEach(function (service) {
+      //   service.email = emails[service.userId]
+      // })
+
+
+      response.json({services: services , emails: emails});
+    })
   }).select('-__v');
 }
 

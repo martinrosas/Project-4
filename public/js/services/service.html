@@ -1,16 +1,29 @@
 <section>
       <div class="heading">
-        <h1>Post A Job</h1>
+        <h1>All Jobs</h1>
       </div>
-      <ul id="services">
       <input type="text" ng-model="search" placeholder="search...">
-        <li ng-repeat="service in services.all | filter: search">
-          <span ng-click ="services.updateStatus(service)" class="status {{service.categories}}">{{service.categories}}</span>
-          {{service.title}}
-          <em>{{service.location}}</em>
-          <button ng-click="services.removeService(service)" class="delete">X</button>
-        </li>
-      </ul>
+      <table class="table table-striped">
+      <!-- <ul id="services"> -->
+       <thead>
+      <tr>
+        <th>Categories</th>
+        <th class="text-center">Title</th>
+        <th class="text-right">Location</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="service in services.all | filter: search">
+         <!-- ng-click ="services.updateStatus(service)" class="status {{service.categories}}"> -->
+          <td>{{service.categories}}</td>
+          <td>{{service.title}}</td>
+          <td>{{service.location}}</td>
+          <td>{{services.emails[service.userId]}}</td>
+          <!-- <button ng-click="services.removeService(service)" class="delete">X</button> -->
+        </tr>
+      <!-- </ul> -->
+      </tbody>
+      </table>
 
 
       <form id="newService" ng-submit="services.addService()">

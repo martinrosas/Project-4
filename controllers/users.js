@@ -49,9 +49,11 @@ function me(req, res, next) {
 };
 
 function show(request, response) {
+  console.log("show user")
   User.findById(request.params.id)
-  .populate('services')
+  // .populate('services')
   .exec(function(error, user) {
+    Service.find({ userId: request.params.id })
     if(error) response.json({message: 'Could not find user b/c:' + error});
 
     response.json(user);
