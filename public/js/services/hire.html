@@ -1,21 +1,62 @@
   <form id="newService" ng-submit="services.addService()">
         <div>
           <label for="title">Title:</label>
-          <input type="text" name="title" ng-model="services.newService.title">
+          <input type="text" name="title" required class="form-control" ng-model="services.newService.title">
         </div>
         <div>
           <label for="location">Location:</label>
           <input type="text" ng-model="services.newService.location" name="location">
         </div>
         <div>
+          <label for="price">Compensation:</label>
+          <input type="number" ng-model="services.newService.price" name="price">
+        </div>
+       <!--  <div>
           <label for="categories">Categories:</label>
-          <select name="categories" ng-model="services.newService.categories">
+          <select name="categories" ng-model="services.newService.categories" cla>
             <option value="web dev">Web Dev</option>
             <option value="photography">Photography</option>
             <option value="cleaning">Cleaning</option>
           </select>
+        </div> -->
+
+<!-- <div class="input-field col s12">
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+    <label>Materialize Select</label>
+  </div> -->
+
+
+        <div class="input-field col s12">
+          <select name="categories" ng-model="services.newService.categories">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="web dev">Web Dev</option>
+            <option value="photography">Photography</option>
+            <option value="cleaning">Cleaning</option>
+          </select>
+          <label for="categories">Categories</label>
         </div>
-        <div>
+       <!--  <div>
           <input type="submit" value="Add Service">
+        </div> -->
+         <button>Send Message</button>
+        <div class="alert alert-success alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            Success! message sent successfully.
         </div>
+
+      <script>
+        $(document).ready(function() {
+           $('select').material_select();
+         });
+        $(document).ready(function(){
+            $('button').click(function(){
+                $('.alert').show()
+            })
+        });
+      </script>
       </form>

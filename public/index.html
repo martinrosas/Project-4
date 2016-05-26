@@ -4,40 +4,58 @@
   <title>Auth App</title>
   <meta charset="utf-8">
 
-  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">
+  <!-- <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
   <link rel="stylesheet" type="text/css" href="/css/main.css">
 
   <!-- If you must use outside libs that aren't Angular-specific, include them BEFORE Angular. -->
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
    <script src="/js/vendor/jwt-decode.2.0.1.js"></script>
 
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
 </head>
 <body>
-  <div class="container-fluid">
-    <header ng-controller="NavbarController as vm">
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-          <a ui-sref="welcome" class="navbar-brand">Home</a>
-          <button ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" class="btn btn-primary navbar-btn navbar-right">Sign in</button>
-          <button ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" type="button" class="btn btn-default navbar-btn navbar-right">Sign out</button>
+<nav ng-controller="NavbarController as vm">
+  <div class="nav-wrapper">
+    <!-- <header ng-controller="NavbarController as vm"> -->
+          <a ui-sref="welcome" class="brand-logo">Home</a>
+          <ul class="right hide-on-med-and-down">
+          <li><a ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" class="waves-effect waves-light btn">Sign in</a></li>
+          <li><a ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" type="button" class="waves-effect waves-light btn">Sign out</a></li>
+    <!-- </header> -->
+          </ul>
         </div>
       </nav>
-    </header>
+      <!-- <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">A link</a></li>
+        <li><a class="waves-effect waves-light btn">A button</a></li>
+        <li><a class="waves-effect waves-light btn-large">A large button</a></li>
+      </ul>
+    </div>
+  </nav> -->
+
 
     <main class="content" ui-view>
       <!-- ui-router (aka ui.router) inserts templates here -->
     </main>
   </div> <!-- div.container-fluid -->
 
-  <footer>
+ <!--  <footer>
     <hr>
     <span>Made with <i class="glyphicon glyphicon-star"></i> in DTLA.</span>
     <br>
     <span>© 2015, WDI</span>
-  </footer>
+  </footer> -->
+
 
   <script src="/js/app.module.js"></script>
   <script src="js/config/app.debug.js"></script>
@@ -53,4 +71,5 @@
   <script src="/js/navbar.controller.js"></script>
   <script src="/js/services/servicesController.js" charset="utf-8"></script>
 </body>
+
 </html>

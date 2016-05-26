@@ -2,28 +2,37 @@
       <div class="heading">
         <h1>All Jobs</h1>
       </div>
+      <div class="container">
       <input type="text" ng-model="search" placeholder="search...">
-      <table class="table table-striped">
+      </div>
+      <!-- <div class="container"> -->
+      <table class="highlight">
       <!-- <ul id="services"> -->
-       <thead>
+      <thead>
       <tr>
+        <th>Title</th>
         <th>Categories</th>
-        <th class="text-center">Title</th>
-        <th class="text-right">Location</th>
+        <!-- class="text-center" -->
+        <th>Location</th>
+        <th>Pay</th>
+        <th>Apply</th>
+        <!-- class="text-right" -->
       </tr>
       </thead>
       <tbody>
         <tr ng-repeat="service in services.all | filter: search">
          <!-- ng-click ="services.updateStatus(service)" class="status {{service.categories}}"> -->
-          <td>{{service.categories}}</td>
           <td>{{service.title}}</td>
+          <td>{{service.categories}}</td>
           <td>{{service.location}}</td>
-          <td>{{services.emails[service.userId]}}</td>
+          <td>{{service.price | currency : "$" : "0"}}</td>
+          <td><a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">{{services.emails[service.userId]}}</a></td>
           <!-- <button ng-click="services.removeService(service)" class="delete">X</button> -->
         </tr>
       <!-- </ul> -->
       </tbody>
       </table>
+      <!-- </div> -->
 
 
     <!--   <form id="newService" ng-submit="services.addService()">

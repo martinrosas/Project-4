@@ -20,7 +20,7 @@ var employees = [
   {title: "Need cleaning", location: "East LA", categories: "photography"}
 ]
 
-Employee.create(services, function(err, services) {
+Employee.create(services, function(err, employees) {
     if (err) {
       console.log(err);
     } else {
