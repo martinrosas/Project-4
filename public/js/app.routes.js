@@ -21,7 +21,9 @@
       })
       .state("profile", {
         url:         "/profile",
-        templateUrl: "/js/profile.html"
+        templateUrl: "/js/profile.html",
+        controller:   "ProfilesController",
+        controllerAs: "profiles"
       })
       .state("services", {
         url:          "/services",

@@ -1,1 +1,13 @@
-<p>STYLIN PROFILIN</p>
+  <section ng-repeat="service in profiles.myServices">
+         <!-- ng-click ="services.updateStatus(service)" cla57467ffa3758b8cdc45ab539ss="status {{service.categories}}"> -->
+         <p>{{service.title}}</p>
+          <p>{{service.categories}}</p>
+          <p>{{service.location}}</p>
+          <p>{{service.price | currency : "$" : "0"}}/hr</p>
+          <p>{{service.created | date : "MM/dd/yyyy" : timezone}}</p>
+          <td>{{profiles.name }}</td>
+          <p>{{services.emails[service.userId]}}</p>
+          <button ng-click="profiles.removeService(service)" class="delete">X</button><hr>
+        </section>
+
+

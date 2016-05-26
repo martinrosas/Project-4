@@ -10,7 +10,6 @@ function getAll(request, response) {
 // Person.find({})
 //  .populate(populateQuery)
 //  .execPopulate()
-  var populateQuery = [{path:'userId', select:'email'}];
   Service.find({}, function(error, services) {
     if(error) response.json({message: 'Could not find any service'});
 
@@ -23,6 +22,10 @@ function getAll(request, response) {
       users.forEach(function (user) {
         emails[user._id] = user.email
       })
+      var names = {}
+      users.forEach(function (user) {
+        names[user._id] = user.name
+      })
 
       // DO THIS ON THE FRONTEND INSTEAD
       // // match the email to the userId in the service
@@ -31,7 +34,7 @@ function getAll(request, response) {
       // })
 
 
-      response.json({services: services , emails: emails});
+      response.json({services: services , emails: emails, names: names});
     })
   }).select('-__v');
 }

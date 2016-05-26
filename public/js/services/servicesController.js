@@ -12,6 +12,7 @@
       //easier for angular to loop through an empty array
       vm.all = [];
       vm.emails = {};
+      vm.names = {};
 
     // http does same thing as $ajax
     // this string is the endpoint we want
@@ -21,6 +22,7 @@
           //response.data is an object
           vm.all = response.data.services;
           vm.emails = response.data.emails;
+          vm.names = response.data.names;
           console.log(vm.emails);
 
           // function getEmail (services) {
@@ -76,12 +78,14 @@
     })
    }
      function updateStatus(service) {
-      if (service.status == "cleaning") {
-        service.status = "web dev";
-      } else if (service.status == "web dev") {
-        service.status = "photography"
-      } else {
-        service.status = "cleaning"
+      if (service.status == "Cleaning") {
+        service.status = "IT & Software";
+      } else if (service.status == "IT & Software") {
+        service.status = "Photography"
+      } else if (service.status == "Photography") {
+        service.status = "Writing"
+      }else {
+        service.status = "Cleaning"
       }
 
 

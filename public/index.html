@@ -24,11 +24,18 @@
 <nav ng-controller="NavbarController as vm">
   <div class="nav-wrapper">
     <!-- <header ng-controller="NavbarController as vm"> -->
-          <a ui-sref="welcome" class="brand-logo">Home</a>
+          <a ui-sref="welcome" class="brand-logo">Sidegig</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
+          <li><a href="mobile.html" ui-sref="profile">Profile</a></li>
           <li><a ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" class="waves-effect waves-light btn">Sign in</a></li>
           <li><a ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" type="button" class="waves-effect waves-light btn">Sign out</a></li>
     <!-- </header> -->
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+          <li><a href="mobile.html" ui-sref="profile">Profile</a></li>
+          <li><a ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" class="waves-effect waves-light btn">Sign in</a></li>
+          <li><a ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" type="button" class="waves-effect waves-light btn">Sign out</a></li>
           </ul>
         </div>
       </nav>
@@ -55,8 +62,26 @@
     <br>
     <span>© 2015, WDI</span>
   </footer> -->
+ <!--   <footer class="footer-navbar-wrapper footer-skinny" role="contentinfo" data-ng-controller="footerController">
+    <div class="container">
+      <div class="row">
+          <div class="col-md-12 text-center">
+              <p class="copyright">
+                  &copy; 2016 Side Gig Inc.
+              </p>
+              <a href="/legal/" target="_self">Terms of Service</a>
+              <br />
+              <a href="/info/terms/cookie-policy/" target="_self">Cookie Policy</a>
+          </div>
+      </div>
+     </div>
+  </footer> -->
 
-
+<script>
+   $(document).ready(function(){
+      $(".button-collapse").sideNav();
+    });
+    </script>
   <script src="/js/app.module.js"></script>
   <script src="js/config/app.debug.js"></script>
   <script src="js/config/app.httpInterceptors.js"></script>
@@ -70,6 +95,7 @@
   <script src="/js/signin.controller.js"></script>
   <script src="/js/navbar.controller.js"></script>
   <script src="/js/services/servicesController.js" charset="utf-8"></script>
+  <script src="/js/services/profilesController.js" charset="utf-8"></script>
 </body>
 
 </html>

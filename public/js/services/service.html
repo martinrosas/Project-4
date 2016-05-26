@@ -15,6 +15,7 @@
         <!-- class="text-center" -->
         <th>Location</th>
         <th>Pay</th>
+        <th>Date Posted</th>
         <th>Apply</th>
         <!-- class="text-right" -->
       </tr>
@@ -25,7 +26,8 @@
           <td>{{service.title}}</td>
           <td>{{service.categories}}</td>
           <td>{{service.location}}</td>
-          <td>{{service.price | currency : "$" : "0"}}</td>
+          <td>{{service.price | currency : "$" : "0"}}/hr</td>
+          <td>{{service.created | date : "MM/dd/yyyy" : timezone}}</td>
           <td><a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">{{services.emails[service.userId]}}</a></td>
           <!-- <button ng-click="services.removeService(service)" class="delete">X</button> -->
         </tr>

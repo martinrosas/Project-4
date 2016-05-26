@@ -1,3 +1,4 @@
+  <div class="form">
   <form id="newService" ng-submit="services.addService()">
         <div>
           <label for="title">Title:</label>
@@ -34,16 +35,17 @@
         <div class="input-field col s12">
           <select name="categories" ng-model="services.newService.categories">
             <option value="" disabled selected>Choose your option</option>
-            <option value="web dev">Web Dev</option>
+            <option value="IT & Software">IT & Software</option>
             <option value="photography">Photography</option>
             <option value="cleaning">Cleaning</option>
+            <option value="writing">Writing</option>
           </select>
           <label for="categories">Categories</label>
         </div>
        <!--  <div>
           <input type="submit" value="Add Service">
         </div> -->
-         <button>Send Message</button>
+         <button class="btn waves-effect waves-light">Send Message</button>
         <div class="alert alert-success alert-dismissable">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             Success! message sent successfully.
@@ -60,3 +62,4 @@
         });
       </script>
       </form>
+      </div>
