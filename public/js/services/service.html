@@ -26,7 +26,7 @@
       <tbody>
         <tr ng-repeat="service in services.all | filter: search | orderBy:services.sortBy:services.descending">
          <!-- ng-click ="services.updateStatus(service)" class="status {{service.categories}}"> -->
-          <td>{{service.title | limitTo: 30}}</td>
+          <td>{{service.title | limitTo: 50}}</td>
           <td>{{service.categories}}</td>
           <td>{{service.location}}</td>
           <td>{{service.price | currency : "$" : "0"}}/hr</td>
