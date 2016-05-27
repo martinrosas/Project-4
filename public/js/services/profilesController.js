@@ -18,7 +18,7 @@
     // http does same thing as $ajax
     // this string is the endpoint we want
 
-    $http.get("http://localhost:3000/services")
+    $http.get("/services")
         .then(function(response) {
           //response.data is an object
 
@@ -36,7 +36,7 @@
       //this first step is good enough for a back end call
       //refresh the page and a criminal is gone
       //we need splice to update the UI
-      $http.delete("http://localhost:3000/services/" + service._id)
+      $http.delete("/services/" + service._id)
       .then(function(){
        vm.myServices.splice(vm.myServices.indexOf(service), 1)
     })

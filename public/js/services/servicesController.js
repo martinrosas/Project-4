@@ -19,7 +19,7 @@
     // http does same thing as $ajax
     // this string is the endpoint we want
 
-    $http.get("http://localhost:3000/services")
+    $http.get("/services")
         .then(function(response) {
           //response.data is an object
           vm.all = response.data.services;
@@ -59,7 +59,7 @@
 
     function addService(){
       $http
-      .post("http://localhost:3000/services",
+      .post("/services",
         vm.newService)
       //if ending at .then, this would be enough to send data to server
       //but not the browser which is why we need push
@@ -74,7 +74,7 @@
       //this first step is good enough for a back end call
       //refresh the page and a criminal is gone
       //we need splice to update the UI
-      $http.delete("http://localhost:3000/services/" + service._id)
+      $http.delete("/services/" + service._id)
       .then(function(){
        vm.all.splice(vm.all.indexOf(service), 1)
     })
@@ -101,7 +101,7 @@
       }
 
 
-           $http.patch("http://localhost:3000/services/"+service._id,
+           $http.patch("/services/"+service._id,
         service)
         .then(function(response) {
 
