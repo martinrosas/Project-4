@@ -127,3 +127,6 @@ form {
 .o-user-type-selection {
   font-size: 21px;
 }
+table {
+  margin:10px;
+}
