@@ -5,25 +5,28 @@
       <div class="container">
       <input type="text" ng-model="search" placeholder="search...">
       </div>
+
       <!-- <div class="container"> -->
       <table class="highlight">
       <!-- <ul id="services"> -->
       <thead>
       <tr>
-        <th>Title</th>
-        <th>Categories</th>
+      <!-- <th ng-click="vm.sortBy = 'name'; vm.descending = !vm.descending ">Name</th>
+        <th ng-click="vm.sortBy = 'city'; vm.descending = !vm.descending ">City</th> -->
+        <th ng-click="services.sortBy = 'title'; services.descending = !services.descending ">Title</th>
+        <th ng-click="services.sortBy = 'categories'; services.descending = !services.descending ">Categories</th>
         <!-- class="text-center" -->
-        <th>Location</th>
-        <th>Pay</th>
-        <th>Date Posted</th>
-        <th>Apply</th>
-        <!-- class="text-right" -->
+        <th ng-click="services.sortBy = 'location'; services.descending = !services.descending ">Location</th>
+        <th ng-click="services.sortBy = 'price'; services.descending = !services.descending ">Pay</th>
+        <th ng-click="services.sortBy = 'created'; services.descending = !services.descending ">Date Posted</th>
+        <th ng-click="services.sortBy = 'apply'; services.descending = !services.descending ">Apply</th>
+        <!-- class="text-rigservices" -->
       </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="service in services.all | filter: search">
+        <tr ng-repeat="service in services.all | filter: search | orderBy:services.sortBy:services.descending">
          <!-- ng-click ="services.updateStatus(service)" class="status {{service.categories}}"> -->
-          <td>{{service.title}}</td>
+          <td>{{service.title | limitTo: 30}}</td>
           <td>{{service.categories}}</td>
           <td>{{service.location}}</td>
           <td>{{service.price | currency : "$" : "0"}}/hr</td>

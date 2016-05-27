@@ -13,6 +13,8 @@
       vm.all = [];
       vm.emails = {};
       vm.names = {};
+      vm.sortBy = "created";
+      vm.descending =true;
 
     // http does same thing as $ajax
     // this string is the endpoint we want
@@ -97,5 +99,16 @@
           console.log(error)
         })
     }
+
+    // vm.sort = sort;
+    // // vm.trimSize = trimSize;
+
+    // function sort(service) {
+    //   vm.sortBy = service;
+    //   vm.descending = !vm.descending
+    // }
+
+
+
   }
 })();

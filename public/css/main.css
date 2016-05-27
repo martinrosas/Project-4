@@ -80,3 +80,12 @@ form {
 .alert{
     display: none;
 }
+/*.trim-info {
+      max-width: 50px;
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      line-height: 15px;
+      position: relative;
+   }*/

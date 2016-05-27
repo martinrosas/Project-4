@@ -1,13 +1,14 @@
   <section ng-repeat="service in profiles.myServices">
          <!-- ng-click ="services.updateStatus(service)" cla57467ffa3758b8cdc45ab539ss="status {{service.categories}}"> -->
-         <p>{{service.title}}</p>
-          <p>{{service.categories}}</p>
-          <p>{{service.location}}</p>
-          <p>{{service.price | currency : "$" : "0"}}/hr</p>
-          <p>{{service.created | date : "MM/dd/yyyy" : timezone}}</p>
-          <td>{{profiles.name }}</td>
+         <!-- <p class="trim-info" tooltip="{{service.title}}">{{service.title}}</p> -->
+          <p>Title: {{service.title}}</p>
+          <p>Category: {{service.categories}}</p>
+          <p>Location: {{service.location}}</p>
+          <p>Compensation: {{service.price | currency : "$" : "0"}}/hr</p>
+          <p>Date Posted: {{service.created | date : "MM/dd/yyyy" : timezone}}</p>
+          <td>Username: {{profiles.name }}</td>
           <p>{{services.emails[service.userId]}}</p>
-          <button ng-click="profiles.removeService(service)" class="delete">X</button><hr>
+          <button ng-click="profiles.removeService(service)" class="delete">Delete Job</button><hr>
         </section>
 
 

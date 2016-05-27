@@ -2,7 +2,7 @@
   <form id="newService" ng-submit="services.addService()">
         <div>
           <label for="title">Title:</label>
-          <input type="text" name="title" required class="form-control" ng-model="services.newService.title">
+          <input id="input_text" type="text" length="30" name="title" required class="form-control" ng-model="services.newService.title">
         </div>
         <div>
           <label for="location">Location:</label>
@@ -60,6 +60,9 @@
                 $('.alert').show()
             })
         });
+        $(document).ready(function() {
+           $('input#input_text').characterCounter();
+         });
       </script>
       </form>
       </div>

@@ -5,14 +5,15 @@
     .module("app")
     .controller('ProfilesController', ProfilesController);
 
-    ProfilesController.$inject = ['$http', 'tokenService'];
+    ProfilesController.$inject = ['$http', 'tokenService', 'authService'];
 
-    function ProfilesController ($http, tokenService) {
+    function ProfilesController ($http, tokenService, authService) {
       var vm = this;
       //easier for angular to loop through an empty array
       vm.myServices = [];
       vm.name = "";
       vm.token = tokenService.decode();
+      vm.authService = authService;
 
     // http does same thing as $ajax
     // this string is the endpoint we want

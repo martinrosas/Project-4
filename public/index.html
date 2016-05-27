@@ -27,7 +27,7 @@
           <a ui-sref="welcome" class="brand-logo">Sidegig</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
-          <li><a href="mobile.html" ui-sref="profile">Profile</a></li>
+          <li><a href="mobile.html" ui-sref="profile" ng-show="vm.authService.isLoggedIn()">Profile</a></li>
           <li><a ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" class="waves-effect waves-light btn">Sign in</a></li>
           <li><a ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" type="button" class="waves-effect waves-light btn">Sign out</a></li>
     <!-- </header> -->
