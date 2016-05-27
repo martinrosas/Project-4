@@ -1,14 +1,41 @@
-  <section ng-repeat="service in profiles.myServices">
-         <!-- ng-click ="services.updateStatus(service)" cla57467ffa3758b8cdc45ab539ss="status {{service.categories}}"> -->
-         <!-- <p class="trim-info" tooltip="{{service.title}}">{{service.title}}</p> -->
-          <p>Title: {{service.title}}</p>
+<!--   <div ng-repeat="service in profiles.myServices">
+          <div>Title: {{service.title}}</div>
           <p>Category: {{service.categories}}</p>
           <p>Location: {{service.location}}</p>
           <p>Compensation: {{service.price | currency : "$" : "0"}}/hr</p>
           <p>Date Posted: {{service.created | date : "MM/dd/yyyy" : timezone}}</p>
           <td>Username: {{profiles.name }}</td>
           <p>{{services.emails[service.userId]}}</p>
-          <button ng-click="profiles.removeService(service)" class="delete">Delete Job</button><hr>
-        </section>
+          <button ng-click="profiles.removeService(service)" class="waves-effect red waves-light btn">Delete Job</button><hr>
+        </div> -->
+        <div class="profilename">Welcome Back, {{profiles.name }}</div><br>
+      <div class="row" ng-repeat="service in profiles.myServices">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content black-text">
+              <span class="card-title">Title: {{service.title}}</span>
+              <p>Category: {{service.categories}}</p>
+              <p>Location: {{service.location}}</p>
+              <p>Hourly Rate: {{service.price | currency : "$" : "0"}}/hr</p>
+              <p>Date Posted: {{service.created | date : "MM/dd/yyyy" : timezone}}</p>
+
+            </div>
+            <div class="card-action">
+              <button ng-click="profiles.removeService(service)" class="waves-effect red waves-light btn">Delete Job</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+   <!--  <div class="row" ng-repeat="service in profiles.myServices">
+      <div class="col s12 m5">
+        <div class="card-panel teal">
+          <span class="white-text">I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+          </span>
+          <p>Compensation: {{service.price | currency : "$" : "0"}}/hr</p>
+        </div>
+      </div>
+    </div> -->
 
 

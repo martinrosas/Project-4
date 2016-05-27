@@ -89,3 +89,41 @@ form {
       line-height: 15px;
       position: relative;
    }*/
+.slider .indicators .indicator-item.active {
+    background-color: rgba(76, 175, 80, 0);
+}
+.blue-grey.darken-1 {
+    background-color: rgba(84, 110, 122, 0) !important;
+}
+/*.card {
+    position: relative;
+    margin: 0.5rem 0 1rem 0;
+    background-color: #fff;
+    transition: box-shadow .25s;
+    border-radius: 2px;
+    width: 273px;
+    height: 286px;
+}*/
+.profilename {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  float: left;
+  margin:24px;
+  font-size: 30px;
+}
+
+
+.row .col.m6 {
+    width: 72%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+}
+.material-icons {
+  color: #26A69A;
+}
+.m-xs-top-bottom {
+  font-size: 54px;
+}
+.o-user-type-selection {
+  font-size: 21px;
+}

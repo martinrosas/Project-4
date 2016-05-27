@@ -6,11 +6,11 @@
         </div>
         <div>
           <label for="location">Location:</label>
-          <input type="text" ng-model="services.newService.location" name="location">
+          <input type="text" required class="form-control" ng-model="services.newService.location" name="location">
         </div>
         <div>
-          <label for="price">Compensation:</label>
-          <input type="number" ng-model="services.newService.price" name="price">
+          <label for="price">Hourly Rate:</label>
+          <input type="number" required class="form-control" ng-model="services.newService.price" name="price">
         </div>
        <!--  <div>
           <label for="categories">Categories:</label>
@@ -36,30 +36,36 @@
           <select name="categories" ng-model="services.newService.categories">
             <option value="" disabled selected>Choose your option</option>
             <option value="IT & Software">IT & Software</option>
-            <option value="photography">Photography</option>
-            <option value="cleaning">Cleaning</option>
-            <option value="writing">Writing</option>
+            <option value="Photography">Photography</option>
+            <option value="Cleaning">Cleaning</option>
+            <option value="Writing">Writing</option>
+            <option value="Design">Design</option>
+            <option value="Data Entry">Data Entry</option>
+            <option value="Sales & Marketing">Sales & Marketing</option>
+            <option value="Business & Accounting">Business & Accounting</option>
+            <option value="Other">Other</option>
+
           </select>
           <label for="categories">Categories</label>
         </div>
        <!--  <div>
           <input type="submit" value="Add Service">
         </div> -->
-         <button class="btn waves-effect waves-light">Send Message</button>
-        <div class="alert alert-success alert-dismissable">
+         <button class="btn waves-effect waves-light">Submit</button>
+        <!-- <div class="alert alert-success alert-dismissable">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             Success! message sent successfully.
-        </div>
+        </div> -->
 
       <script>
         $(document).ready(function() {
            $('select').material_select();
          });
-        $(document).ready(function(){
-            $('button').click(function(){
-                $('.alert').show()
-            })
-        });
+        // $(document).ready(function(){
+        //     $('button').click(function(){
+        //         $('.alert').show()
+        //     })
+        // });
         $(document).ready(function() {
            $('input#input_text').characterCounter();
          });

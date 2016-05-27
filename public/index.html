@@ -7,6 +7,7 @@
   <!-- <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="/css/main.css">
 
@@ -23,19 +24,25 @@
 <body>
 <nav ng-controller="NavbarController as vm">
   <div class="nav-wrapper">
-    <!-- <header ng-controller="NavbarController as vm"> -->
-          <a ui-sref="welcome" class="brand-logo">Sidegig</a>
+
+          <a ui-sref="welcome" class="brand-logo">SideGig</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
-          <li><a href="mobile.html" ui-sref="profile" ng-show="vm.authService.isLoggedIn()">Profile</a></li>
-          <li><a ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" class="waves-effect waves-light btn">Sign in</a></li>
+          <li><a href="mobile.html" ui-sref="usertype" ng-show="vm.authService.isLoggedIn()">Work</a></li>
+          <li><a href="mobile.html" ui-sref="hire" ng-show="vm.authService.isLoggedIn()">Post Project</a></li>
+          <li><a href="mobile.html" ui-sref="services" ng-show="vm.authService.isLoggedIn()">See Projects</a></li>
+          <li><a href="mobile.html" ui-sref="profile" ng-show="vm.authService.isLoggedIn()">My Projects</a></li>
+          <li><a href="mobile.html" ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" >Sign in</a></li>
           <li><a ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" type="button" class="waves-effect waves-light btn">Sign out</a></li>
-    <!-- </header> -->
+
           </ul>
           <ul class="side-nav" id="mobile-demo">
-          <li><a href="mobile.html" ui-sref="profile">Profile</a></li>
+          <li><a href="mobile.html" ui-sref="usertype" ng-show="vm.authService.isLoggedIn()">Work</a></li>
+          <li><a href="mobile.html" ui-sref="hire" ng-show="vm.authService.isLoggedIn()">Post Project</a></li>
+          <li><a href="mobile.html" ui-sref="services" ng-show="vm.authService.isLoggedIn()">See Projects</a></li>
+          <li><a href="mobile.html" ui-sref="profile" ng-show="vm.authService.isLoggedIn()">My Projects</a></li>
           <li><a ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" class="waves-effect waves-light btn">Sign in</a></li>
-          <li><a ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" type="button" class="waves-effect waves-light btn">Sign out</a></li>
+          <li><a ng-show="vm.authService.isLoggedIn()" ui-sref="welcome" ng-click= "vm.authService.logOut()" type="button" class="waves-effect waves-light btn">Sign out</a></li>
           </ul>
         </div>
       </nav>

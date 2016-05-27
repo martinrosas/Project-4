@@ -86,7 +86,17 @@
         service.status = "Photography"
       } else if (service.status == "Photography") {
         service.status = "Writing"
-      }else {
+      } else if (service.status == "Writing") {
+        service.status = "Design"
+      } else if (service.status == "Design") {
+        service.status = "Data Entry"
+      } else if (service.status == "Data Entry") {
+        service.status = "Sales & Marketing"
+      } else if (service.status == "Sales & Marketing") {
+        service.status = "Business & Accounting"
+      } else if (service.status == "Business & Accounting") {
+        service.status = "Other"
+      } else {
         service.status = "Cleaning"
       }
 
