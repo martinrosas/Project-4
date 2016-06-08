@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html ng-app="app">
 <head>
-  <title>Auth App</title>
+  <title>Sidegig</title>
   <meta charset="utf-8">
 
   <!-- <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <link rel="stylesheet" type="text/css" href="/css/main.css">
 
   <!-- If you must use outside libs that aren't Angular-specific, include them BEFORE Angular. -->
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-   <script src="/js/vendor/jwt-decode.2.0.1.js"></script>
+  <script src="/js/vendor/jwt-decode.2.0.1.js"></script>
 
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
 
 </head>
 <body>
@@ -47,49 +48,17 @@
           </ul>
         </div>
       </nav>
-      <!-- <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">A link</a></li>
-        <li><a class="waves-effect waves-light btn">A button</a></li>
-        <li><a class="waves-effect waves-light btn-large">A large button</a></li>
-      </ul>
-    </div>
-  </nav> -->
-
 
     <main class="content" ui-view>
       <!-- ui-router (aka ui.router) inserts templates here -->
     </main>
   </div> <!-- div.container-fluid -->
 
- <!--  <footer>
-    <hr>
-    <span>Made with <i class="glyphicon glyphicon-star"></i> in DTLA.</span>
-    <br>
-    <span>© 2015, WDI</span>
-  </footer> -->
- <!--   <footer class="footer-navbar-wrapper footer-skinny" role="contentinfo" data-ng-controller="footerController">
-    <div class="container">
-      <div class="row">
-          <div class="col-md-12 text-center">
-              <p class="copyright">
-                  &copy; 2016 Side Gig Inc.
-              </p>
-              <a href="/legal/" target="_self">Terms of Service</a>
-              <br />
-              <a href="/info/terms/cookie-policy/" target="_self">Cookie Policy</a>
-          </div>
-      </div>
-     </div>
-  </footer> -->
-
 <script>
    $(document).ready(function(){
       $(".button-collapse").sideNav();
     });
-    </script>
+</script>
   <script src="/js/app.module.js"></script>
   <script src="js/config/app.debug.js"></script>
   <script src="js/config/app.httpInterceptors.js"></script>
